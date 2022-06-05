@@ -21,14 +21,26 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+const listBelanjaan = (data) => {
+  let list = [];
+  for (const datum of data) {
+    list.push(`- ${datum.nama} x ${datum.kuantitas}`);
+  }
+  return list;
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = (data) => {
+  let result = 0;
+  for (const datum of data) {
+    result += datum.harga * datum.kuantitas;
+  }
+  return result;
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
-  console.log("Selamat datang customer");
+  console.log("Selamat datang customer\n");
 
   console.log("Belanjaan Anda adalah:");
   console.log(listBelanjaan?.(dataBelanjaan)?.join("\n"));
